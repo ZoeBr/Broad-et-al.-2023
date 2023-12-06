@@ -10,9 +10,14 @@ Gene expression sequencing was conducted by the Beijing Genomics Institute (BGI)
 Basic quality control of the raw reads for all 60 samples was conducted using FASTQC (SOURCE) on default parameters. Trimmomatic (SOURCE) was used to identify the first ten base pairs of each read as low quality and trim them. A report for all individuals was compiled from the FASTQC outputs using MultiQC (SOURCE). 
 
 ## Assembly and Mapping
-We assembled and mapped the trimmed reads onto a S. lautus reference transcriptome (SOURCE Wilkinson et al., 2021) using HISAT2 (SOURCE). 
+We assembled and mapped the trimmed reads onto a S. lautus reference transcriptome (SOURCE Wilkinson et al., 2021) using HISAT2 (SOURCE). The SAM files from HISAT2 were then converted to BAM files using Samtools (SOURCE) and the reads were then processed using TPM calculator (Source) to normalise read counts. 
 
-## Pricniple Component Analysis
+The aligned reads were then translated into GFF3 format using GMAP/GSNAP (SOURCE).
+
+## Data Filtering
+
+
+## Principle Component Analysis
 
 ## Differential Gene Expression
 
