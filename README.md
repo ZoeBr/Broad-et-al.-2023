@@ -6,7 +6,7 @@ Gene expression sequencing data files are available on The University of Queensl
 # Bioinformatics
 Gene expression sequencing was conducted by the Beijing Genomics Institute (BGI) using the DNBseq platform. Pooled samples were sequenced randomly with respect to Gravitropic/Agravitropic phenotype, control and rotation group and time group (Samples were taken at 5 time points). 
 
-# Transcriptome assembly (Trinity)
+## Transcriptome assembly (Trinity)
 ##Contig assembly from RNA-Seq
 
 Trinity --seqType fq --max_memory 400G
@@ -14,12 +14,12 @@ Trinity --seqType fq --max_memory 400G
 --right /Filtered_UnZ_FQ/{ SCAG_All.R2.fq, SCGR_All.R2.fq }
 --CPU 12 --min_contig_length 200 --full_cleanup
 
-# Transcriptome contigs mapping (GMAP)
+## Transcriptome contigs mapping (GMAP)
 ##Generate gff3
 
 gmap -D /SL19Y_GMAP_DB -d SL19Y_GMAP_DB -t 8 -O AUnig_Ref.fasta -f 2 > GMAP_UnigRef_SL19Y_Out gmap -D /SL19Y_GMAP_DB -d SL19Y_GMAP_DB -t 8 -O Trinity_ASM_MD.fasta -f 2 > GMAP_TrnASM_SL19Y_Out
 
-# RNA-Seq mapping and TPM calculation (hisat2, samtools, tpmcalculator)
+## RNA-Seq mapping and TPM calculation (hisat2, samtools, tpmcalculator)
 ##HiSat2 Index (SL19PB Genome Reference)
 
 hisat2-build -f /SL19_PBCtg.fasta SL19PB -p 4
